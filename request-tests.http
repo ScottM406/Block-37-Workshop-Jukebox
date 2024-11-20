@@ -1,0 +1,37 @@
+@host = http://localhost:3000
+
+### TEST API WELCOME MESSAGE
+GET {{host}}
+
+### TEST GET USERS
+GET {{host}}/users
+
+### TEST GET SPECIFIC USER
+GET {{host}}/users/3
+
+### TEST GET NON-EXISTANT USER
+GET {{host}}/users/88
+
+### TEST GET PLAYLISTS
+GET {{host}}/playlists
+
+### TEST POST PLAYLIST
+POST {{host}}/playlists
+Content-Type: application/json
+
+{
+  "name": "Slip 'n Slide Jams",
+  "description": "Summertime favorites to day-drink to.",
+  "tracks": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "ownerID": 1
+}
+
+### TEST GET SPECIFIC PLAYLIT
+GET {{host}}/playlists/9
+
+
+### TEST GET ALL TRACKS
+GET {{host}}/tracks
+
+### TEST GET SPECIFIC TRACK
+GET {{host}}/tracks/10
